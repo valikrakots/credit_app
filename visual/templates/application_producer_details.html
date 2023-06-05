@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if producers is None %}
+        <p>There is no application with this id.</p>
+    {% elif not producers %}
+        <p>There are no positions that belong to this application.</p>
+    {% else %}
+        Ids of positions producers for selected credit application:
+        {% for producer in producers %}
+            <p>{{ producer.id }}</p>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
